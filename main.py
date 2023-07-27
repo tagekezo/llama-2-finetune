@@ -3,9 +3,6 @@ import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
 import datetime
 
-# model_id = "tiiuae/falcon-7b"
-# model = AutoModelForCausalLM.from_pretrained(model_id, trust_remote_code=True)
-
 bnb_config = BitsAndBytesConfig(
     load_in_4bit=True,
     bnb_4bit_use_double_quant=True,
@@ -140,8 +137,7 @@ trainer.evaluate()
 # Load dataset from the hub
 test_dataset = load_dataset("samsum", split="test")
 
-# select a random test sample
-# sample = test_dataset[randint(0, len(test_dataset))]
+# select test sample
 sample = test_dataset[-1]
 
 # format sample
