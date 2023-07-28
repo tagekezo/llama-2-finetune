@@ -5,6 +5,7 @@
 It takes 3 hours to run this on AWS using g5.12xlarge instance (4x Nvidia A10 GPUs).
 
 ```python
+huggingface-cli login # requires authentication to download llama-2 models
 git clone git@github.com:tagekezo/llama-2-finetune.git
 cd llama-2-finetune
 source activate pytorch
